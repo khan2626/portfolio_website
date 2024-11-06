@@ -13,7 +13,7 @@ function About(){
         'Matplotlib'
     ]
     return (
-        <div className="">
+        <div className="py-10">
             <SectionTitle title="About me"></SectionTitle>
             <div className="sm:flex-col flex justify-between items-center">
             
