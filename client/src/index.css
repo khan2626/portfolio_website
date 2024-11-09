@@ -11,3 +11,39 @@
     font-weight: <weight>;
     font-style: normal;
 }
+
+i {
+    cursor: pointer;
+}
+i:hover {
+    color: white
+}
+
+.i{
+    animation: i 1s infinite
+}
+
+@keyframes i{
+    0%{opacity: 1;}
+    50%{opacity: 0.5;}
+    100%{opacity: 0.5;}
+}
+
+.u{
+    animation: u 1s infinite
+}
+
+@keyframes u{
+    0%{opacity: 0.5;}
+    50%{opacity: 1;}
+    100%{opacity: 0.5;}
+}
+
+.a{
+    animation: a 1s infinite
+}
+@keyframes a{
+    0%{opacity: 0.5;}
+    50%{opacity: 0.5;}
+    100%{opacity: 1;}
+}

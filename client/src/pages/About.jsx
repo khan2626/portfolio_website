@@ -15,10 +15,10 @@ function About(){
     return (
         <div className="py-10">
             <SectionTitle title="About me"></SectionTitle>
-            <div className="sm:flex-col flex justify-between items-center">
+            <div className="sm:flex-col flex justify-between gap-5 items-center">
             
                 <div>
-                    <img className="sm:h-[30vh] h-[50vh] rounded-full object-contain" src={developer} alt="" />
+                    <img className="sm:h-[30vh] h-[42vh] rounded-full object-contain" src={developer} alt="" />
                 </div>
                 <div className="sm:w-full w-3/4 justify-center py-7 text-gray-600"> 
                     <p> 

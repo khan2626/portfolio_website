@@ -7,7 +7,7 @@ import Contact from "./Contact"
 
 function Home() {
     return (
-        <div className="sm:h-auto bg-primary px-10 sm:px-3">
+        <div className=" bg-primary px-10 sm:px-3">
             
             <Intro/>
             <About/>

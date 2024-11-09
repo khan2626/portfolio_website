@@ -3,7 +3,7 @@ import React from "react";
 function Intro(){
     return (
         <div className=" flex flex-col items-start">
-            <div className="px-5 py-5 w-3/4 md:w-auto">
+            <div className="px-5 py-5 w-3/4">
                 <p className="text-white py-3">Hi there!</p>
                 <p className="text-5xl md:text-3xl sm:text-3xl py-3 text-secondary ">
                     I'm <strong>Israel Ukanyohe Agi</strong> but you can call me <strong>khan</strong>. 
