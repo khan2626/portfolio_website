@@ -13,7 +13,7 @@ export const projects = [
     technologies: ["python", "Express", "MongoDB"],
     description:
       "this is a multiplayer game for PC built with" +
-      "python and pygame library",
+      " python and pygame library",
     Image:
       "https://cdn.pixabay.com/photo/2024/01/25/06/56/ai-generated-8531105_1280.png",
   },
