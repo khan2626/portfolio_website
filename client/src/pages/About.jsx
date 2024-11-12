@@ -22,9 +22,9 @@ function About(){
                 </div>
                 <div className="sm:w-full w-3/4 justify-center py-7 text-gray-600"> 
                     <p> 
-                        I'm a dedicated <strong>backend developer</strong> and <strong>data analyst</strong> with a passion for crafting efficient systems 
+                        I'm a dedicated fullstack developer(back-end heavy) and data analyst with a passion for crafting efficient systems 
                         and transforming data into actionable insights. Over the past years, I've honed my skills in various 
-                        programming languages and database management systems, ensuring seamless and robust back-end operations 
+                        programming languages, database management systems, front-end and back-end libraries and frameworks, ensuring seamless and robust fullstack operations 
                         for a range of projects. My analytical prowess allows me to delve deep into data, uncovering patterns 
                         and trends that drive informed decision-making.
                     </p>
