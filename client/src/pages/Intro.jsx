@@ -9,10 +9,10 @@ function Intro(){
                     I'm <strong>Israel Ukanyohe Agi</strong> but you can call me <strong>khan</strong>. 
                 </p>
                 <p className="text-4xl md:text-2xl sm:text-2xl text-white font-semibold">
-                    I solve problems with python and javascript
+                    I solve problems with python and javascript.
                 </p>
-                <p className="text-white">
-                    I'm a dedicated <strong>backend developer,</strong> <strong>data analyst</strong> and an instructor
+                <p className="text-white font-semibold">
+                    I'm a dedicated fullstack developer, data analyst and an instructor.
                 </p>
             </div>
             
