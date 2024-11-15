@@ -8,7 +8,7 @@ function Intro(){
 
     return (
         <div className=" flex flex-col items-start">
-            <div className="px-5 py-5 w-3/4">
+            <div className="px-5 py-5 w-3/4 sm:w-full">
                 <p className="text-white py-3">{welcomeText || ""}</p>
                 <p className="text-5xl md:text-3xl sm:text-3xl py-3 text-secondary ">
                     I'm <strong>{name || ""}</strong> but you can call me <strong>{nickname || ""}</strong>. 

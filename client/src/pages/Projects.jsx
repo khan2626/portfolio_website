@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { projects } from "../resources/projects_data";
 import SectionTitle from "../components/SectionTitle";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -11,7 +10,7 @@ function Projects(){
 
     const [projectIndex, setProjectIndex] = useState(0)
     return (
-        <div className="">
+        <div className="py-5">
             <SectionTitle title="Projects"></SectionTitle>
             <div className="flex gap-20 sm:gap-7 py-7 sm:flex-col">
                 <div  className="cursor-pointer flex flex-col sm:flex-row sm:overflow-x-scroll sm:gap-10 gap-5 border-l-2 border-[#4acaac82]">
