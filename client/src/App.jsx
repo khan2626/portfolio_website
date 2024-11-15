@@ -6,29 +6,41 @@ import Header from './components/Header'
 import Footer from "./components/Footer";
 import Sider from "./components/Sider";
 import Loader from "./components/Loader";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ShowLoading, HideLoading, SetPortfolioData } from "./redux/rootSlice.js";
+
+
 
 function App() {
-  const [showloader, setshowloader] = useState(false)
-
+  
+  const { loading, portfolioData } = useSelector((state) => state.root)
+  const dispatch = useDispatch()
+  
   const getPortfolioData = async()=>{
     try{
+      dispatch(ShowLoading())
       const response = await axios.get('http://localhost:3400/portfolio_data')
-      console.log(response.data)
+      dispatch(SetPortfolioData(response.data))
+      dispatch(HideLoading())
+      
     } catch(error){
       console.error(error)
     }
   }
 
+
   useEffect(()=>{
-    getPortfolioData()
-  },[])
+    if(!portfolioData){
+      getPortfolioData()
+    }
+    
+  },[portfolioData])
 
   return (
     <div className="bg-primary h-auto px-10 sm:px-3">
       <BrowserRouter>
-      {showloader ?<Loader/>:null}
-      
+      { loading && <Loader/>}
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>

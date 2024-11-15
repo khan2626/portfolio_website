@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { projects } from "../resources/projects_data";
+// import { projects } from "../resources/projects_data";
 import SectionTitle from "../components/SectionTitle";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 function Projects(){
+    const {portfolioData} = useSelector((state)=> state.root)
+    const {projects} = portfolioData
+
     const [projectIndex, setProjectIndex] = useState(0)
     return (
         <div className="">
@@ -21,10 +26,11 @@ function Projects(){
                 </div>
                 <div className="flex sm:flex-col items-center gap-10 sm:gap-5">
                     <div className="">
-                        <img src={projects[projectIndex].Image} alt="" className="h-[20vh]" />
+                        <img src={projects[projectIndex].image} alt="" className="h-[30vh] object-contain" />
                     </div>
                     <div className="">
-                        <p className="text-secondary text-lg">{projects[projectIndex].description}</p>
+                        <p className="text-secondary text-lg ">{projects[projectIndex].description}</p>
+                        <Link to={projects[projectIndex].url} className="text-tertiary text-lg cursor-pointer">click here to visit the repository</Link>
                     </div>
                 </div>
                 

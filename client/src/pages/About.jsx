@@ -1,39 +1,30 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import developer from "../Assets/developer.jpg"
 import SectionTitle from "../components/SectionTitle";
-
 function About(){
-    const skills = ['python',
-        'Nodejs',
-        'Express',
-        'MySql',
-        'MongoDB',
-        'React',
-        'Pandas',
-        'Matplotlib'
-    ]
+
+    const {portfolioData} = useSelector((state)=> state.root)
+    const {about} = portfolioData
+    const {description1, description2, description3, skills} = about
+
+    
     return (
-        <div className="py-10">
+        <div className="">
             <SectionTitle title="About me"></SectionTitle>
-            <div className="sm:flex-col flex justify-between gap-5 items-center">
+            <div className="sm:flex-col flex  gap-4 justify-between items-center">
             
                 <div>
-                    <img className="sm:h-[30vh] h-[42vh] rounded-full object-contain" src={developer} alt="" />
+                    <img className="sm:h-[25vh] h-[35vh] rounded-full object-contain" src={developer} alt="" />
                 </div>
-                <div className="sm:w-full w-3/4 justify-center py-7 text-gray-600"> 
+                <div className="sm:w-full w-3/4 justify-center py-7  text-gray-600"> 
                     <p> 
-                        I'm a dedicated fullstack developer(back-end heavy) and data analyst with a passion for crafting efficient systems 
-                        and transforming data into actionable insights. Over the past years, I've honed my skills in various 
-                        programming languages, database management systems, front-end and back-end libraries and frameworks, ensuring seamless and robust fullstack operations 
-                        for a range of projects. My analytical prowess allows me to delve deep into data, uncovering patterns 
-                        and trends that drive informed decision-making.
+                       {description1}
                     </p>
                     <p>
-                        Proficient in SQL, Python, and data visualization tools, I thrive on challenges that require innovative 
-                        solutions. My approach is grounded in a combination of technical excellence and a keen understanding of 
-                        business needs, making me a versatile asset in any team.
+                        {description2}
                     </p>
-                    <p>Let's create something impactful together!</p>
+                    <p>{description3}</p>
                 </div>
                 
             </div>
@@ -55,5 +46,4 @@ function About(){
         
     )
 }
-
 export default About

@@ -1,18 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function Intro(){
+    const {portfolioData} = useSelector((state)=> state.root)
+    const {intro} = portfolioData
+    const {welcomeText, name, nickname, caption, description} = intro
+
     return (
         <div className=" flex flex-col items-start">
             <div className="px-5 py-5 w-3/4">
-                <p className="text-white py-3">Hi there!</p>
+                <p className="text-white py-3">{welcomeText || ""}</p>
                 <p className="text-5xl md:text-3xl sm:text-3xl py-3 text-secondary ">
-                    I'm <strong>Israel Ukanyohe Agi</strong> but you can call me <strong>khan</strong>. 
+                    I'm <strong>{name || ""}</strong> but you can call me <strong>{nickname || ""}</strong>. 
                 </p>
                 <p className="text-4xl md:text-2xl sm:text-2xl text-white font-semibold">
-                    I solve problems with python and javascript.
+                    {caption || ""}
                 </p>
                 <p className="text-white font-semibold">
-                    I'm a dedicated fullstack developer, data analyst and an instructor.
+                    {description || ""}
                 </p>
             </div>
             
