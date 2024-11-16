@@ -29,7 +29,8 @@ function Projects(){
                     </div>
                     <div className="">
                         <p className="text-secondary text-lg ">{projects[projectIndex].description}</p>
-                        <Link to={projects[projectIndex].url} className="text-tertiary text-lg cursor-pointer">click here to visit the repository</Link>
+                        <p className="text-secondary text-lg ">click <Link to={projects[projectIndex].url} className="text-tertiary text-lg cursor-pointer">here</Link> to visit the repository</p>
+                        
                     </div>
                 </div>
                 

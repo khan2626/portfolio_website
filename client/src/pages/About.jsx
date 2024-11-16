@@ -15,7 +15,7 @@ function About(){
             <div className="sm:flex-col flex  gap-4 justify-between items-center">
             
                 <div>
-                    <img className="sm:h-[25vh] h-[35vh] rounded-full object-contain" src={developer} alt="" />
+                    <img className="sm:h-[25vh] h-[40vh] rounded-full object-contain" src={developer} alt="" />
                 </div>
                 <div className="sm:w-full w-3/4 justify-center py-7  text-gray-600"> 
                     <p> 

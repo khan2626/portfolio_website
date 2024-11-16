@@ -20,7 +20,7 @@ function App() {
   const getPortfolioData = async()=>{
     try{
       dispatch(ShowLoading())
-      const response = await axios.get('http://localhost:3400/portfolio_data')
+      const response = await axios.get('https://khan-portfolio-website.onrender.com/portfolio_data')
       dispatch(SetPortfolioData(response.data))
       dispatch(HideLoading())
       
@@ -34,7 +34,6 @@ function App() {
     if(!portfolioData){
       getPortfolioData()
     }
-    
   },[portfolioData])
 
   return (
