@@ -13,7 +13,7 @@ function Intro(){
                 <p className="text-5xl md:text-3xl sm:text-3xl py-3 text-secondary ">
                     I'm <strong>{name || ""}</strong> but you can call me <strong>{nickname || ""}</strong>. 
                 </p>
-                <p className="text-4xl md:text-2xl sm:text-2xl text-white font-semibold">
+                <p className="py-5 text-4xl md:text-2xl sm:text-2xl text-white font-semibold">
                     {caption || ""}
                 </p>
                 <p className="text-white font-semibold">
