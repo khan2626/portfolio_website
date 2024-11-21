@@ -12,12 +12,12 @@ function About(){
     return (
         <div className="">
             <SectionTitle title="About me"></SectionTitle>
-            <div className="sm:flex-col flex  gap-4 justify-between items-center">
+            <div className="sm:flex-col flex gap-4 justify-between items-center">
             
                 <div>
                     <img className="sm:h-[25vh] h-[40vh] rounded-full object-contain" src={developer} alt="" />
                 </div>
-                <div className="sm:w-full w-3/4 justify-center py-7  text-gray-600"> 
+                <div className="sm:w-full w-3/4 justify-center sm:py-3 py-7  text-gray-600"> 
                     <p> 
                        {description1}
                     </p>
