@@ -11,14 +11,13 @@ function Home() {
     return (
         <>
         {portfolioData && (
-        <div className=" bg-primary px-10 sm:px-3">
+        <main className="max-w-6xl mx-auto px-4 sm:px-6 pl-14 sm:pl-4">
             <Intro/>
             <About/>
             <Projects/>
             <Contact/>
-        </div>
+        </main>
         )}
-        
         </>
         
     )

@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Loader(){
-    return(
-        <div className="">
-            <div className="flex font-bold text-6xl gap-3 fixed bg-primary items-center justify-center inset-0">
-                <p className="text-white i">I</p>
-                <p className="text-secondary u">U</p>
-                <p className="text-tertiary a">A</p>
+export default function Loader() {
+    return (
+        <div className="fixed inset-0 z-[100] bg-primary flex items-center justify-center">
+            <div className="flex font-bold text-5xl gap-2">
+                <span className="text-secondary i">I</span>
+                <span className="text-white u">U</span>
+                <span className="text-tertiary a">A</span>
             </div>
         </div>
-    )
+    );
 }

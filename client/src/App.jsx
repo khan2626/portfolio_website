@@ -17,17 +17,23 @@ function App() {
   const { loading, portfolioData } = useSelector((state) => state.root)
   const dispatch = useDispatch()
   
-  const getPortfolioData = async()=>{
-    try{
-      dispatch(ShowLoading())
-      const response = await axios.get('https://khan-portfolio-website.onrender.com/portfolio_data')
-      dispatch(SetPortfolioData(response.data))
-      dispatch(HideLoading())
-      
-    } catch(error){
-      console.error(error)
+  const getPortfolioData = async () => {
+    try {
+      dispatch(ShowLoading());
+      const apiUrl = process.env.NODE_ENV === 'development' ? '/portfolio_data' : 'https://khan-portfolio-website.onrender.com/portfolio_data';
+      const response = await axios.get(apiUrl);
+      dispatch(SetPortfolioData(response.data));
+    } catch (error) {
+      console.error(error);
+      // Fallback to local data if API fails
+      const { intro } = await import('./resources/intro_data');
+      const { abouts } = await import('./resources/intro_data');
+      const { projects } = await import('./resources/projects_data');
+      dispatch(SetPortfolioData({ intro: intro[0], about: abouts[0], projects }));
+    } finally {
+      dispatch(HideLoading());
     }
-  }
+  };
 
 
   useEffect(()=>{
@@ -37,7 +43,7 @@ function App() {
   },[portfolioData])
 
   return (
-    <div className="bg-primary h-auto px-10 sm:px-3">
+    <div className="bg-primary min-h-screen text-white">
       <BrowserRouter>
       { loading && <Loader/>}
       <Header/>

@@ -1,12 +1,13 @@
 import React from "react";
 
-function SectionTitle({title}){
+function SectionTitle({ title }) {
     return (
-        <div className="flex gap-5 items-center">
-            <p className="text-secondary font-semibold">{title}</p>
-            <p className="w-60 h-[1px] sm:w-40 bg-tertiary"></p>
+        <div className="flex gap-3 sm:gap-4 items-center justify-center mb-6 sm:mb-5">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-tertiary"></div>
+            <h2 className="text-2xl font-bold text-white">{title}</h2>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-tertiary"></div>
         </div>
-    )
+    );
 }
 
-export default SectionTitle
+export default SectionTitle;
