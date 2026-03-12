@@ -22,10 +22,12 @@ function App() {
     const getPortfolioData = async () => {
       try {
         dispatch(ShowLoading());
+        const apiUrl =
+          process.env.NODE_ENV === "development"
+            ? "/portfolio_data"
+            : "https://khan-portfolio-website.onrender.com/portfolio_data";
 
-        const response = await axios.get(
-          "https://khan-portfolio-website.onrender.com/portfolio_data"
-        );
+        const response = await axios.get(apiUrl);
 
         dispatch(SetPortfolioData(response.data));
       } catch (error) {
