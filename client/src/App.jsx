@@ -18,33 +18,62 @@ function App() {
   const { loading, portfolioData } = useSelector((state) => state.root);
   const dispatch = useDispatch();
 
-  const getPortfolioData = async () => {
-    try {
-      dispatch(ShowLoading());
-      const apiUrl =
-        "https://khan-portfolio-website.onrender.com/portfolio_data";
-      //const apiUrl = process.env.NODE_ENV === 'development' ? '/portfolio_data' : 'https://khan-portfolio-website.onrender.com/portfolio_data';
-      const response = await axios.get(apiUrl);
-      dispatch(SetPortfolioData(response.data));
-    } catch (error) {
-      console.error(error);
-      // Fallback to local data if API fails
-      const { intro } = await import("./resources/intro_data");
-      const { abouts } = await import("./resources/intro_data");
-      const { projects } = await import("./resources/projects_data");
-      dispatch(
-        SetPortfolioData({ intro: intro[0], about: abouts[0], projects })
-      );
-    } finally {
-      dispatch(HideLoading());
-    }
-  };
+  // const getPortfolioData = async () => {
+  //   try {
+  //     dispatch(ShowLoading());
+  //     const apiUrl =
+  //       "https://khan-portfolio-website.onrender.com/portfolio_data";
+  //     //const apiUrl = process.env.NODE_ENV === 'development' ? '/portfolio_data' : 'https://khan-portfolio-website.onrender.com/portfolio_data';
+  //     const response = await axios.get(apiUrl);
+  //     dispatch(SetPortfolioData(response.data));
+  //   } catch (error) {
+  //     console.error(error);
+  //     // Fallback to local data if API fails
+  //     const { intro } = await import("./resources/intro_data");
+  //     const { abouts } = await import("./resources/intro_data");
+  //     const { projects } = await import("./resources/projects_data");
+  //     dispatch(
+  //       SetPortfolioData({ intro: intro[0], about: abouts[0], projects })
+  //     );
+  //   } finally {
+  //     dispatch(HideLoading());
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (!portfolioData) {
+  //     getPortfolioData();
+  //   }
+  // }, [portfolioData]);
 
   useEffect(() => {
-    if (!portfolioData) {
-      getPortfolioData();
-    }
-  }, [portfolioData]);
+    const getPortfolioData = async () => {
+      try {
+        dispatch(ShowLoading());
+
+        const response = await axios.get(
+          "https://khan-portfolio-website.onrender.com/portfolio_data"
+        );
+
+        dispatch(SetPortfolioData(response.data));
+      } catch (error) {
+        const { intro, abouts } = await import("./resources/intro_data");
+        const { projects } = await import("./resources/projects_data");
+
+        dispatch(
+          SetPortfolioData({
+            intro: intro[0],
+            about: abouts[0],
+            projects,
+          })
+        );
+      } finally {
+        dispatch(HideLoading());
+      }
+    };
+
+    getPortfolioData();
+  }, [dispatch]);
 
   return (
     <div className="bg-primary min-h-screen text-white">
